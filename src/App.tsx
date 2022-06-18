@@ -314,9 +314,9 @@ function App() {
     <>
       <Header/>
       <main>
-        {!selectedClub ? <Sidebar clubsList={clubs} club={selectedClub} onUpdateSelectedClub={updateSelectedClub}/> : <ClubProfile club={clubMock} />}
+        {!selectedClub ? <Sidebar clubsList={clubs} club={selectedClub} onUpdateSelectedClub={updateSelectedClub}/> : <ClubProfile logo_url={clubMock.logo_url} name={clubMock.name} />}
         <NewsBox club={selectedClub}/>
-        
+
       </main>
     </>
   )

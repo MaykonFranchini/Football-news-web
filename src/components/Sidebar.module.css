@@ -11,6 +11,11 @@ h1 {
   text-align: center;
 }
 
+.clubsList nav a.active {
+  background: var(--blue-200);
+  font-weight: bold;
+}
+
 .clubsList nav {
   display: flex;
   align-items: center;
@@ -25,6 +30,8 @@ h1 {
   padding: .5rem;
   border-radius: 8px;
 }
+
+
 
 .clubsList nav a:hover {
   filter:brightness(.9);
