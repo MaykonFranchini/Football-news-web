@@ -1,0 +1,53 @@
+
+.clubsList {
+  max-width: 280px;
+  border-radius: 8px;
+  background: var(--gray-100);
+}
+
+h1 {
+  width: 100%;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.clubsList nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.clubsList nav a {
+  text-decoration: none;
+  color: var(--gray-700);
+  background: var(--gray-200);
+  padding: .5rem;
+  border-radius: 8px;
+}
+
+.clubsList nav a:hover {
+  filter:brightness(.9);
+}
+
+.clubsBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.clubsList button {
+  background: transparent;
+  border: none;
+  padding: .5rem;
+  cursor: pointer;
+  border: solid 1px transparent;
+}
+
+.clubsList button:hover {
+  border: solid 1px var(--blue-900);
+  background: var(--blue-100);
+  border-radius: 8px;
+}
+.clubsList img {
+  width: 2rem;
+}
