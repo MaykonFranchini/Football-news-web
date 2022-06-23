@@ -3,6 +3,7 @@
   border-radius: 8px;
   background: var(--gray-100);
   overflow: hidden;
+  max-height: 240px;
 }
 
 .clubProfileContainer > img {
@@ -31,4 +32,9 @@
 .avatar img {
   width: 100%;
   border: 1px solid var(--blue);
+}
+
+
+.loading {
+  margin-left: 10px;
 }

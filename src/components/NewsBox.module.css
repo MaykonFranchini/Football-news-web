@@ -9,3 +9,37 @@
   font-size: 1rem;
   font-weight: bold;
 }
+
+
+.newsCard {
+  display: flex;
+  gap: 20px;
+  background: var(--gray-50);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  align-items: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.newsCard a {
+  text-decoration: none;
+  color: black;
+}
+
+.newsCard img {
+  width: 160px;
+  border-radius: 4px;
+}
+
+.newsWrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.newsWrapper.loading {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  width: 100%;
+  margin: 0 auto;
+}
