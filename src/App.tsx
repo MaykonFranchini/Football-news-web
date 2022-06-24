@@ -12,7 +12,8 @@ function App() {
   const [clubList, setClubList] = useState<Club[]>([]);
   const [selectedClub, setSelectedClub] = useState('');
   const [selectedClubProfile, setSelectedClubProfile] = useState({ name: 'Flamengo', logo_url: "https://s.glbimg.com/es/sde/f/organizacoes/2018/04/10/Flamengo-2018.svg", source_url:"https://ge.globo.com/futebol/times/flamengo/"});
-
+  
+  
   useEffect(() => {
    const getClubs = async() => {
     const response = await fetch('https://football-news-api-production.up.railway.app/clubs')

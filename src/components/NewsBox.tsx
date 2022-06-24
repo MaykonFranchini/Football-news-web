@@ -37,12 +37,12 @@ export function NewsBox({ club }:NewsBoxProps) {
         {!club &&  
           <div className={styles.newsBox}>
             <Newspaper size={48} />
-            <p>Selecione seu clube para ter acesso as ultimas noticias</p>
+            <p >Selecione seu clube para ter acesso as ultimas noticias</p>
           </div>
         }
 
         <div className={styles.newsWrapper}>
-          {news.length <= 0 && club && <div className={styles.loading}><span ><SoccerBall size={32} /><strong>{club}</strong><SoccerBall size={32} /></span></div>}
+          {news.length <= 0 && club && <div className={styles.loading}><SoccerBall size={32} /> <span>Carregando...</span><SoccerBall size={32} /></div>}
           
             {news.map(article => {
                 return (
