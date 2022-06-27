@@ -37,11 +37,15 @@ function App() {
 
   }
 
+  function returnToClubSelection() {
+    setSelectedClub('')
+  }
+
   return (
     <>
       <Header/>
       <main>
-        {!selectedClub ? <Sidebar clubsList={clubList} club={selectedClub} onUpdateSelectedClub={updateSelectedClub} /> : <ClubProfile logo_url={selectedClubProfile.logo_url} name={selectedClubProfile.name} />}
+        {!selectedClub ? <Sidebar clubsList={clubList} club={selectedClub} onUpdateSelectedClub={updateSelectedClub} /> : <ClubProfile onReturnToClubList={returnToClubSelection} logo_url={selectedClubProfile.logo_url} name={selectedClubProfile.name} />}
         <NewsBox club={selectedClub} />
 
       </main>

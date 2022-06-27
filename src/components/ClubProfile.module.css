@@ -4,6 +4,7 @@
   background: var(--gray-100);
   overflow: hidden;
   max-height: 240px;
+  position: relative;
 }
 
 .clubProfileContainer > img {
@@ -38,3 +39,21 @@
 .loading {
   margin-left: 10px;
 }
+
+.returnButtomWrapper {
+  position: absolute;
+  top: .25rem;
+  left: .25rem;
+ 
+}
+
+.return {
+  font-size: .75rem;
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  color: var(--gray-50);
+  cursor: pointer;
+  text-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+

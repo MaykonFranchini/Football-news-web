@@ -1,5 +1,5 @@
 import styles from './NewsBox.module.css'
-import { Divide, Newspaper, SoccerBall, SpeakerNone } from 'phosphor-react'
+import { Divide, Newspaper, PersonSimpleRun, SoccerBall, SpeakerNone } from 'phosphor-react'
 import { useEffect, useState } from 'react'
 
 interface News {
@@ -18,11 +18,16 @@ export function NewsBox({ club }:NewsBoxProps) {
   useEffect(()=> {
     
     const url = `https://football-news-api-production.up.railway.app/latestsnews/${club}`
+
     const getNews = async() => {
+     try { 
       const response = await fetch(url)
       const {data} = await response.json()
             
       setNews(data)
+     } catch {
+      setNews([])
+     }
     }
   
     getNews() 
@@ -42,7 +47,7 @@ export function NewsBox({ club }:NewsBoxProps) {
         }
 
         <div className={styles.newsWrapper}>
-          {news.length <= 0 && club && <div className={styles.loading}><SoccerBall size={32} /> <span>Carregando...</span><SoccerBall size={32} /></div>}
+          { news.length <= 0 && club && <div className={styles.loading}><PersonSimpleRun size={62} weight="bold" /><span className={styles.ball}><SoccerBall size={32} weight="bold" /></span></div>}
           
             {news.map(article => {
                 return (

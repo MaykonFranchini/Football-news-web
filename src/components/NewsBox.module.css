@@ -38,13 +38,13 @@
 
 .newsWrapper .loading {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content:center;
   width: 100%;
   margin: 0 auto;
   animation: carregando 1.5s ease-in-out infinite;
 }
-.newsWrapper .loading svg {
+.newsWrapper .loading .ball {
   animation: rolling 2.5s ease-in-out infinite ;
 }
 
@@ -59,9 +59,12 @@
 @keyframes rolling {
   0% {
     transform: rotate(0deg);
+    margin-left: 80px;
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
+    margin-left: -20px;
+    
   }
 }
 
