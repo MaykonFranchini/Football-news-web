@@ -6,12 +6,13 @@ import './global.css'
 import  './App.module.css'
 import { NewsBox } from "./components/NewsBox"
 import { ClubProfile } from './components/ClubProfile'
+import Logo from './assets/logo.png'
 
 function App() {
 
   const [clubList, setClubList] = useState<Club[]>([]);
   const [selectedClub, setSelectedClub] = useState('');
-  const [selectedClubProfile, setSelectedClubProfile] = useState({ name: 'Flamengo', logo_url: "https://s.glbimg.com/es/sde/f/organizacoes/2018/04/10/Flamengo-2018.svg", source_url:"https://ge.globo.com/futebol/times/flamengo/"});
+  const [selectedClubProfile, setSelectedClubProfile] = useState({ name: '', logo_url: '', source_url:"https://ge.globo.com/futebol/times/flamengo/"});
   
   
   useEffect(() => {
@@ -39,12 +40,14 @@ function App() {
 
   function returnToClubSelection() {
     setSelectedClub('')
+    setSelectedClubProfile({ name: '', logo_url: '', source_url:""})
   }
 
   return (
     <>
       <Header/>
       <main>
+        <img className='logoBackground' src={selectedClubProfile.logo_url} alt="" />
         {!selectedClub ? <Sidebar clubsList={clubList} club={selectedClub} onUpdateSelectedClub={updateSelectedClub} /> : <ClubProfile onReturnToClubList={returnToClubSelection} logo_url={selectedClubProfile.logo_url} name={selectedClubProfile.name} />}
         <NewsBox club={selectedClub} />
 

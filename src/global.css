@@ -21,3 +21,13 @@ body {
   font-family: 'Roboto', sans-serif;
   color: var(--gray-700);
 }
+
+.logoBackground {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  filter: opacity(.05);
+  z-index: -1;
+  margin: 0 auto;
+  object-fit: cover;
+}

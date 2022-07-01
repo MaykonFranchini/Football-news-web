@@ -16,9 +16,7 @@ export function NewsBox({ club }:NewsBoxProps) {
   
 
   useEffect(()=> {
-    
     const url = `https://football-news-api-production.up.railway.app/latestsnews/${club}`
-
     const getNews = async() => {
      try { 
       const response = await fetch(url)
@@ -34,7 +32,7 @@ export function NewsBox({ club }:NewsBoxProps) {
   },[club])
 
 
-  console.log(news);
+
   
   return (
 
