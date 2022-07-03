@@ -22,6 +22,9 @@ export function ClubProfile({ logo_url, name, onReturnToClubList }:ProfileProps)
       <div className={styles.returnButtomWrapper}>
         <button className={styles.return} onClick={onReturnToClubList}> <ArrowUUpLeft size={32} weight="bold" /></button>
       </div>
+      <div className={styles.newsletterSubBtn}>
+      <button>Subscribe</button>
+      </div>
       
     </aside>
   )
