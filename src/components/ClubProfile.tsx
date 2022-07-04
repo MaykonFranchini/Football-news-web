@@ -5,11 +5,12 @@ interface ProfileProps {
   name: string;
   logo_url: string;
   onReturnToClubList: ()=> void;
+  openModal: ()=> void;
 }
 
 
 
-export function ClubProfile({ logo_url, name, onReturnToClubList }:ProfileProps) {
+export function ClubProfile({ logo_url, name, onReturnToClubList, openModal }:ProfileProps) {
   return (
     <aside className={styles.clubProfileContainer}>
       <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=570&q=80" />
@@ -23,7 +24,7 @@ export function ClubProfile({ logo_url, name, onReturnToClubList }:ProfileProps)
         <button className={styles.return} onClick={onReturnToClubList}> <ArrowUUpLeft size={32} weight="bold" /></button>
       </div>
       <div className={styles.newsletterSubBtn}>
-      <button>Subscribe</button>
+      <button onClick={openModal}>Subscribe</button>
       </div>
       
     </aside>

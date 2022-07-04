@@ -1,20 +1,35 @@
 import { useEffect, useState } from 'react'
+import axios from 'axios';
 
 import { Header } from "./components/Header"
 import { Club, Sidebar } from "./components/Sidebar"
-import './global.css'
-import  './App.module.css'
 import { NewsBox } from "./components/NewsBox"
 import { ClubProfile } from './components/ClubProfile'
-import Logo from './assets/logo.png'
+import { SubscriptioModal, Inputs } from './components/SubsciptionModal'
+
+
+import './global.css'
+import  './App.module.css'
+
 
 function App() {
 
   const [clubList, setClubList] = useState<Club[]>([]);
   const [selectedClub, setSelectedClub] = useState('');
-  const [selectedClubProfile, setSelectedClubProfile] = useState({ name: '', logo_url: '', source_url:"https://ge.globo.com/futebol/times/flamengo/"});
+  const [selectedClubProfile, setSelectedClubProfile] = useState({ name: '', logo_url: '', source_url:"", id:''});
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   
-  
+ 
+
+  function onSubmit(data: Inputs) {
+    const {email, first_name, last_name} = data;
+    axios.post('http://localhost:3333/subscription', 
+    {email, first_name, last_name, club_id: selectedClubProfile.id}
+    )
+
+    setModalIsOpen(false);
+  }
+
   useEffect(() => {
    const getClubs = async() => {
     const response = await fetch('https://football-news-api-production.up.railway.app/clubs')
@@ -33,14 +48,22 @@ function App() {
     
     setSelectedClubProfile({name: clubProfile[0].name,
       logo_url: clubProfile[0].logo_url,
-      source_url: clubProfile[0].source_url
+      source_url: clubProfile[0].source_url,
+      id: clubProfile[0].id
     })
 
   }
 
   function returnToClubSelection() {
     setSelectedClub('')
-    setSelectedClubProfile({ name: '', logo_url: '', source_url:""})
+    setSelectedClubProfile({ name: '', logo_url: '', source_url:"", id:''})
+  }
+
+  function handleOpenModal() {
+    setModalIsOpen(true)
+  }
+  function closeModal() {
+    setModalIsOpen(false)
   }
 
   return (
@@ -48,9 +71,21 @@ function App() {
       <Header/>
       <main>
         <img className='logoBackground' src={selectedClubProfile.logo_url} alt="" />
-        {!selectedClub ? <Sidebar clubsList={clubList} club={selectedClub} onUpdateSelectedClub={updateSelectedClub} /> : <ClubProfile onReturnToClubList={returnToClubSelection} logo_url={selectedClubProfile.logo_url} name={selectedClubProfile.name} />}
+        {!selectedClub ? 
+          <Sidebar 
+            clubsList={clubList} 
+            club={selectedClub} 
+            onUpdateSelectedClub={updateSelectedClub} 
+          /> : 
+          <ClubProfile 
+            openModal={handleOpenModal} 
+            onReturnToClubList={returnToClubSelection} 
+            logo_url={selectedClubProfile.logo_url} 
+            name={selectedClubProfile.name} 
+          />
+        }
         <NewsBox club={selectedClub} />
-
+        <SubscriptioModal isOpen={modalIsOpen} onRequestClose={closeModal} onSubmit={onSubmit}/>
       </main>
     </>
   )
