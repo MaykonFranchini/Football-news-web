@@ -1,0 +1,46 @@
+.modalWrapper h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.modalWrapper button[type='button'] {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.modalWrapper input {
+  width: 100%;
+  padding: 0 1.5rem;
+  height: 4rem;
+  border: 1px solid var(--gray-300);
+  background: var(--gray-100);
+  font-weight: 400;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.modalWrapper input[type='submit'] {
+  background: var(--blue-100);
+  color: var(--white);
+  font-weight: 700;
+  border: 1px solid var(--blue-900);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease-in-out;
+}
+.modalWrapper input[type='submit']:hover {
+  filter:brightness(0.9);
+}
+
+.errorMsg {
+  color: rgb(186, 0, 0);
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
