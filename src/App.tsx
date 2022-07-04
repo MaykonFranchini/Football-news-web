@@ -1,15 +1,19 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { Header } from "./components/Header"
 import { Club, Sidebar } from "./components/Sidebar"
 import { NewsBox } from "./components/NewsBox"
 import { ClubProfile } from './components/ClubProfile'
 import { SubscriptioModal, Inputs } from './components/SubsciptionModal'
 
-
+import 'react-toastify/dist/ReactToastify.css';
 import './global.css'
 import  './App.module.css'
+
 
 
 function App() {
@@ -18,16 +22,27 @@ function App() {
   const [selectedClub, setSelectedClub] = useState('');
   const [selectedClubProfile, setSelectedClubProfile] = useState({ name: '', logo_url: '', source_url:"", id:''});
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  
- 
+
+  const sucsessSubscription = () => toast.success("Inscricao realizada com sucesso!");
+  const errorSubscription = () => toast.error("Erro ao realizar inscricao. Tente novamente!");
 
   function onSubmit(data: Inputs) {
     const {email, first_name, last_name} = data;
-    axios.post('http://localhost:3333/subscription', 
-    {email, first_name, last_name, club_id: selectedClubProfile.id}
-    )
+    
+    axios.post('https://football-news-api-production.up.railway.app/subscription', 
+      {email, first_name, last_name, club_id: selectedClubProfile.id}
+    ).then(function (response) {
+      sucsessSubscription();
+    })
+    .catch(function (error) {
+      errorSubscription();
+    });
+    
 
+    
     setModalIsOpen(false);
+
+    
   }
 
   useEffect(() => {
@@ -68,6 +83,7 @@ function App() {
 
   return (
     <>
+    <ToastContainer/>
       <Header/>
       <main>
         <img className='logoBackground' src={selectedClubProfile.logo_url} alt="" />

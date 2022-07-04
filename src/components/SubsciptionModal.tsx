@@ -19,7 +19,7 @@ export type Inputs = {
 
 export function SubscriptioModal({isOpen, onRequestClose, onSubmit}: SubscriptioModalProps) {
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+  const { register, handleSubmit, watch,  formState: { errors } } = useForm<Inputs>();
 
   return (
     <Modal isOpen={isOpen} onRequestClose={onRequestClose} overlayClassName='react-modal-overlay' className='react-modal-content' >
