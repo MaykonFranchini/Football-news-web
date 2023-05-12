@@ -510,49 +510,46 @@
     {
       "src": "ios/72.png",
       "sizes": "72x72",
-      "type": "image/png",
       "type": "image/png"
+
     },
     {
       "src": "ios/76.png",
       "sizes": "76x76",
-      "type": "image/png",
       "type": "image/png"
+
     },
     {
       "src": "ios/80.png",
       "sizes": "80x80",
-      "type": "image/png",
       "type": "image/png"
+
     },
     {
       "src": "ios/87.png",
       "sizes": "87x87",
-      "type": "image/png",
       "type": "image/png"
+
     },
     {
       "src": "ios/100.png",
       "sizes": "100x100",
-      "type": "image/png",
       "type": "image/png"
+
     },
     {
       "src": "ios/114.png",
       "sizes": "114x114",
-      "type": "image/png",
       "type": "image/png"
     },
     {
       "src": "ios/120.png",
       "sizes": "120x120",
-      "type": "image/png",
       "type": "image/png"
     },
     {
       "src": "ios/128.png",
       "sizes": "128x128",
-      "type": "image/png",
       "type": "image/png"
     },
     {
