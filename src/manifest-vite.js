@@ -50,7 +50,8 @@ export const manifest = {
         {
           src: "windows11/Square150x150Logo.scale-125.png",
           sizes: "188x188",
-          type: "image/png"
+          type: "image/png",
+          purpose: "any"
         },
         {
           src: "windows11/Square150x150Logo.scale-150.png",
@@ -415,7 +416,8 @@ export const manifest = {
         {
           src: "windows11/Square44x44Logo.altform-lightunplated_targetsize-256.png",
           sizes: "256x256",
-          type: "image/png"
+          type: "image/png",
+          purpose: "any maskable"
         },
         {
           src: "android/android-launchericon-512-512.png",
@@ -425,7 +427,8 @@ export const manifest = {
         {
           src: "android/android-launchericon-192-192.png",
           sizes: "192x192",
-          type: "image/png"
+          type: "image/png",
+          purpose: "any"
         },
         {
           src: "android/android-launchericon-144-144.png",
@@ -567,12 +570,14 @@ export const manifest = {
         {
           src: "ios/192.png",
           sizes: "192x192",
-          type: "image/png"
+          type: "image/png",
+          purpose: "any"
         },
         {
           src: "ios/256.png",
           sizes: "256x256",
-          type: "image/png"
+          type: "image/png",
+          purpose: "any maskable"
         },
         {
           src: "ios/512.png",
