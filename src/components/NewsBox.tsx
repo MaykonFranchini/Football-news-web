@@ -50,7 +50,7 @@ export function NewsBox({ club }:NewsBoxProps) {
             {news.map(article => {
                 return (
                   <div className={styles.newsCard} key={article.title}>
-                     <img src={article.image_url} />
+                     <img src={article.img_url} />
                      <a href={article.link}><p>{article.title}</p></a>
                   </div>
                 )
