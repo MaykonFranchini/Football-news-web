@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 interface News {
   title: string;
   link: string;
-  img_url: string;
+  image_url: string;
 }
 interface NewsBoxProps {
   club?: string
@@ -50,7 +50,7 @@ export function NewsBox({ club }:NewsBoxProps) {
             {news.map(article => {
                 return (
                   <div className={styles.newsCard} key={article.title}>
-                     <img src={article.img_url} />
+                     <img src={article.image_url} />
                      <a href={article.link}><p>{article.title}</p></a>
                   </div>
                 )
